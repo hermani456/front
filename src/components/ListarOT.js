@@ -3,7 +3,6 @@ import axios from 'axios'
 import EditarOT from './EditarOT'
 import { FaTrashAlt } from 'react-icons/fa'
 import moment from 'moment'
-import AgregarOT from './AgregarOT'
 
 const ListarOT = () => {
 	const [ordenes, setordenes] = useState([])
@@ -21,7 +20,6 @@ const ListarOT = () => {
 		await axios.delete(process.env.REACT_APP_MAGIC_SECRET, { data: { ot } })
 		setordenes(ordenes.filter((orden) => orden.ot !== ot))
 	}
-	<AgregarOT orden={ordenes} setOrden={setordenes}/>
 
 	return (
 		<div>
@@ -39,12 +37,6 @@ const ListarOT = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{/* <tr>
-						<th scope='row'>1</th>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-					</tr> */}
 					{ordenes.map((orden) => {
 						return (
 							<tr key={orden.ot}>

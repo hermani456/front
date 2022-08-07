@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import moment from 'moment'
+
 
 const AgregarOT = () => {
+	const [ordenes, setordenes] = useState([])
 	const [ot, setOt] = useState('')
 	const [referencia, setreferencia] = useState('')
 	const [tipo_documento, setTipoDocumento] = useState('')
@@ -14,10 +17,17 @@ const AgregarOT = () => {
 		const estado = 'En proceso'
 		const nuevaOrden = { ot, referencia, tipo_documento, fecha_ingreso, fecha_entrega, estado, observaciones }
 		await axios.post(process.env.REACT_APP_MAGIC_SECRET, nuevaOrden)
-		window.location = '/'
+		setordenes([...ordenes, nuevaOrden])
+		setOt('')
+		setreferencia('')
+		setTipoDocumento('')
+		setFechaIngreso('')
+		setFechaEntrega('')
+		setObservaciones('')
 	}
 	
 	return (
+		<>
 		<div className='mt-5'>
 			<form className='container' onSubmit={handleSubmit}>
 				<div className='row'>
@@ -90,6 +100,58 @@ const AgregarOT = () => {
 				</div>
 			</form>
 		</div>
+		<div>
+			<h1 className='text-center my-3'>Ordenes de trabajo</h1>
+			<table className='table text-white'>
+				<thead>
+					<tr>
+						<th scope='col'>OT</th>
+						<th scope='col'>Referencia</th>
+						<th scope='col'>Tipo de Documento</th>
+						<th scope='col'>Fecha Ingreso</th>
+						<th scope='col'>Fecha Entrega</th>
+						<th scope='col'>Estado</th>
+						<th scope='col'>Observaciones</th>
+					</tr>
+				</thead>
+				<tbody>
+					{/* <tr>
+						<th scope='row'>1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+					</tr> */}
+					{ordenes.map((orden) => {
+						return (
+							<tr key={orden.ot}>
+								<th scope='row'>{orden.ot}</th>
+								<td>{orden.referencia}</td>
+								<td>{orden.tipo_documento}</td>
+								<td>{moment(orden.fecha_ingreso).utc().format('DD-MM-YY')}</td>
+								<td>{moment(orden.fecha_entrega).utc().format('DD-MM-YY')}</td>
+								<td>{orden.estado}</td>
+								<td>{orden.observaciones}</td>
+								{/* <td>
+									<EditarOT orden={orden} setOrden={setordenes} />
+								</td> */}
+								{/* <td>
+									<FaTrashAlt
+										className='text-danger'
+										type='button'
+										onClick={() => eliminarorden(orden.ot)}
+									>
+										Borrar
+									</FaTrashAlt>
+								</td> */}
+							</tr>
+						)
+					})}
+				</tbody>
+			</table>
+		</div>
+		</>
+
+		
 	)
 }
 
