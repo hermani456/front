@@ -1,0 +1,14 @@
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.deco {
+	text-decoration: none;
+}
+html,
+#root,
+.bgcolor {
+	background-color: rgb(43, 42, 51);
+	color: white;
+}
