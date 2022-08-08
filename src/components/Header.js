@@ -21,7 +21,7 @@ const pages = [
 
 const handleLogout = () => {
 	localStorage.removeItem('user')
-	window.location.reload()
+	window.location.href = '/'
 }
 const settings = [{ name: 'Logout', action: handleLogout }]
 
