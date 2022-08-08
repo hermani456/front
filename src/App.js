@@ -2,7 +2,7 @@ import Header from './components/Header'
 import AgregarOT from './components/AgregarOT'
 import { Container } from 'react-bootstrap'
 import ListarOT from './components/ListarOT'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 import Login from './components/login/Login'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthContext } from './context/AuthContext'
@@ -41,7 +41,6 @@ function App() {
 						<Route path='*' element={<div>Not found</div>} />
 					</Routes>
 				</Container>
-				<Footer />
 			</BrowserRouter>
 		</>
 	)
