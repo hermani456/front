@@ -163,12 +163,13 @@ import Button from '@mui/material/Button'
 import './agregarOT.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import MenuItem from '@mui/material/MenuItem';
 import moment from 'moment'
 
 const columns = [
 	{ field: 'ot', headerName: 'OT', width: 90 },
-	{ field: 'rut', headerName: 'RUT', width: 90 },
-	{ field: 'referencia', headerName: 'Referencia', width: 150 },
+	// { field: 'rut', headerName: 'RUT', width: 90 },
+	{ field: 'referencia', headerName: 'Referencia', width: 180 },
 	{ field: 'tipo_documento', headerName: 'Documento', width: 130 },
 	{
 		field: 'fecha_ingreso',
@@ -199,9 +200,9 @@ const columns = [
 export default function AgregarOT() {
 	const [ordenes, setordenes] = useState([])
 	const [ot, setOt] = useState('')
-	const [rut, setRut] = useState('')
+	const [rut, setRut] = useState(17797462)
 	const [referencia, setreferencia] = useState('')
-	const [tipo_documento, setTipoDocumento] = useState('')
+	const [tipo_documento, setTipoDocumento] = useState('GP')
 	const [fecha_ingreso, setFechaIngreso] = useState('')
 	const [fecha_entrega, setFechaEntrega] = useState('')
 	const [observaciones, setObservaciones] = useState('')
@@ -239,9 +240,11 @@ export default function AgregarOT() {
 		setObservaciones('')
 	}
 
+	const options = ['GP', 'D.F.R.', 'ESCRITURA', 'OTRO']
+
 	return (
 		<>
-		<h2 className='text-center mt-3'>Agregar Nueva OT</h2>
+			<h2 className='text-center mt-3'>Agregar Nueva OT</h2>
 			<Box
 				marginTop={4}
 				component='form'
@@ -272,10 +275,17 @@ export default function AgregarOT() {
 					/>
 					<TextField
 						label='Tipo de Documento'
+						select
 						type='text'
 						value={tipo_documento}
 						onChange={(e) => setTipoDocumento(e.target.value)}
-					/>
+					>
+					{options.map((option) => (
+						<MenuItem key={option} value={option}>
+							{option}
+						</MenuItem>
+					))}
+					</TextField>
 					<TextField
 						label='Fecha Ingreso'
 						type='date'
@@ -312,14 +322,15 @@ export default function AgregarOT() {
 				</Button>
 			</Box>
 			<h2 className='text-center my-3'>Listado de OTs</h2>
-			<div style={{ height: 400, width: '100%', marginTop: 20 }}>
+			<div style={{ height: 500, width: '100%', marginTop: 20, marginBottom: 30 }}>
 				<DataGrid
 					className='field'
 					rows={ordenes}
 					getRowId={(row) => row.ot}
 					columns={columns}
-					pageSize={10}
-					rowsPerPageOptions={[10, 20, 30]}
+					pageSize={7}
+					rowsPerPageOptions={[5]}
+					checkboxSelection={false}
 				/>
 			</div>
 		</>
