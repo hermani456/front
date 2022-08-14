@@ -167,6 +167,7 @@ import moment from 'moment'
 
 const columns = [
 	{ field: 'ot', headerName: 'OT', width: 90 },
+	{ field: 'rut', headerName: 'RUT', width: 90 },
 	{ field: 'referencia', headerName: 'Referencia', width: 150 },
 	{ field: 'tipo_documento', headerName: 'Documento', width: 130 },
 	{
@@ -184,7 +185,7 @@ const columns = [
 	{
 		field: 'estado',
 		headerName: 'Estado',
-		width: 120,
+		width: 180,
 	},
 	{
 		field: 'oberservaciones',
@@ -198,6 +199,7 @@ const columns = [
 export default function AgregarOT() {
 	const [ordenes, setordenes] = useState([])
 	const [ot, setOt] = useState('')
+	const [rut, setRut] = useState('')
 	const [referencia, setreferencia] = useState('')
 	const [tipo_documento, setTipoDocumento] = useState('')
 	const [fecha_ingreso, setFechaIngreso] = useState('')
@@ -218,6 +220,7 @@ export default function AgregarOT() {
 		const estado = 'En proceso'
 		const nuevaOrden = {
 			ot,
+			rut,
 			referencia,
 			tipo_documento,
 			fecha_ingreso,
@@ -228,6 +231,7 @@ export default function AgregarOT() {
 		await axios.post(process.env.REACT_APP_MAGIC_SECRET, nuevaOrden)
 		setordenes([...ordenes, nuevaOrden])
 		setOt('')
+		setRut('')
 		setreferencia('')
 		setTipoDocumento('')
 		setFechaIngreso('')
@@ -253,6 +257,12 @@ export default function AgregarOT() {
 						type='number'
 						value={ot}
 						onChange={(e) => setOt(e.target.value)}
+					/>
+					<TextField
+						label='Rut'
+						type='number'
+						value={rut}
+						onChange={(e) => setRut(e.target.value)}
 					/>
 					<TextField
 						label='Referencia'
