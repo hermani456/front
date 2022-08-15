@@ -2,3 +2,26 @@
    /* background-color: rgb(255, 255, 255); */
    color: white;
 }
+.status{
+   padding: 5px;
+   border-radius: 5px;
+}
+.LISTO{
+   color: green;
+   background-color: rgba(0, 128, 0, 0.107);
+}
+.PROCESO{
+   color: orange;
+   background-color: rgba(255, 165, 0, 0.107);
+}
+.RECHAZADO{
+   color: red;
+   background-color: rgba(255, 0, 0, 0.107);
+}
+.ENTREGADO{
+   color: blue;
+   background-color: rgba(0, 0, 255, 0.107);
+}
+.links{
+   cursor: pointer;
+}
