@@ -329,7 +329,7 @@ export default function AgregarOT() {
 					getRowId={(row) => row.ot}
 					columns={columns}
 					pageSize={7}
-					rowsPerPageOptions={[5]}
+					rowsPerPageOptions={[7]}
 					checkboxSelection={false}
 				/>
 			</div>
