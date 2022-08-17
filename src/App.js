@@ -26,7 +26,7 @@ function App() {
 							path='/'
 							element={
 								<RequireAuth>
-									<ListarOT />
+									<AgregarOT />
 								</RequireAuth>
 							}
 						/>
@@ -34,7 +34,7 @@ function App() {
 							path='agregar'
 							element={
 								<RequireAuth>
-									<AgregarOT />
+									<ListarOT />
 								</RequireAuth>
 							}
 						/>
