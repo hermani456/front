@@ -87,7 +87,7 @@ export default function AgregarOT() {
 		setObservaciones('')
 	}
 
-	const options = ['GP', 'D.F.R.', 'ESCRITURA', 'ADJUDICACION', 'COMPRAVENTA', 'PROHIBICION', 'OTRO', 'HERENCIA']
+	const options = ['GP', 'D.F.R.', 'ESCRITURA', 'ADJUDICACION', 'COMPRAVENTA', 'PROHIBICION', 'HERENCIA', 'OTRO']
 
 	return (
 		<>
