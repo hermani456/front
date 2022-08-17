@@ -10,7 +10,6 @@ import moment from 'moment'
 import { styled } from '@mui/material/styles'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
-import Typography from '@mui/material/Typography'
 import TableCell, { tableCellClasses } from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
@@ -65,6 +64,7 @@ export default function AgregarOT() {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		const estado = 'En espera'
+		const fecha_ingreso = moment().format('YYYY-MM-DD')
 		const nuevaOrden = {
 			ot,
 			rut,
@@ -75,18 +75,19 @@ export default function AgregarOT() {
 			estado,
 			observaciones,
 		}
+		console.log(nuevaOrden)
 		await axios.post(process.env.REACT_APP_MAGIC_SECRET, nuevaOrden)
 		setordenes([...ordenes, nuevaOrden])
 		setOt('')
-		setRut('')
+		setRut(17797462)
 		setreferencia('')
-		setTipoDocumento('')
+		setTipoDocumento('GP')
 		setFechaIngreso('')
 		setFechaEntrega('')
 		setObservaciones('')
 	}
 
-	const options = ['GP', 'D.F.R.', 'ESCRITURA', 'OTRO']
+	const options = ['GP', 'D.F.R.', 'ESCRITURA', 'ADJUDICACION', 'COMPRAVENTA', 'PROHIBICION', 'OTRO']
 
 	return (
 		<>
@@ -132,7 +133,7 @@ export default function AgregarOT() {
 							</MenuItem>
 						))}
 					</TextField>
-					<TextField
+					{/* <TextField
 						label='Fecha Ingreso'
 						type='date'
 						InputLabelProps={{
@@ -140,7 +141,7 @@ export default function AgregarOT() {
 						}}
 						value={fecha_ingreso}
 						onChange={(e) => setFechaIngreso(e.target.value)}
-					/>
+					/> */}
 					<TextField
 						label='Fecha Retiro'
 						type='date'
