@@ -75,7 +75,6 @@ export default function AgregarOT() {
 			estado,
 			observaciones,
 		}
-		console.log(nuevaOrden)
 		await axios.post(process.env.REACT_APP_MAGIC_SECRET, nuevaOrden)
 		setordenes([...ordenes, nuevaOrden])
 		setOt('')
