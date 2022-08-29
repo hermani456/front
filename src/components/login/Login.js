@@ -123,6 +123,7 @@ const Login = () => {
 						>
 							Sign In
 						</Button>
+						{error && <span style={{color: 'red'}}>Usuario o contraseña no validos</span>}
 					</Box>
 				</Box>
 				<Copyright className="text" sx={{ mt: 8, mb: 4 }} />
