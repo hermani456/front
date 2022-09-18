@@ -63,7 +63,7 @@ export default function AgregarOT() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		const estado = 'En espera'
+		const estado = 'Esperando'
 		const fecha_ingreso = moment().format('YYYY-MM-DD')
 		const nuevaOrden = {
 			ot,
