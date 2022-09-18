@@ -17,6 +17,7 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 import Link from '@mui/material/Link'
+import Header from './Header'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
 	[`&.${tableCellClasses.head}`]: {
@@ -90,6 +91,7 @@ export default function AgregarOT() {
 
 	return (
 		<>
+		<Header/>
 			<h2 className='text-center mt-3'>AGREGAR OT</h2>
 			<Box
 				marginTop={4}

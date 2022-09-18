@@ -1,4 +1,3 @@
-import Header from './components/Header'
 import AgregarOT from './components/AgregarOT'
 import { Container } from 'react-bootstrap'
 import ListarOT from './components/ListarOT'
@@ -18,7 +17,6 @@ function App() {
 	return (
 		<>
 			<BrowserRouter>
-				<Header />
 				<Container>
 					<Routes>
 						<Route path='login' element={<Login />} />
