@@ -8,6 +8,7 @@ import axios from "axios";
 import MenuItem from "@mui/material/MenuItem";
 import moment from "moment";
 import ListOT from "./ListOT";
+import Loading from "./Loading";
 
 export default function AgregarOT() {
   const [ordenes, setordenes] = useState([]);
@@ -74,8 +75,9 @@ export default function AgregarOT() {
   ];
 
   if (loading) {
-    return <div>LOADING</div>;
+    return <Loading />;
   }
+
   return (
     <>
       <h4 className="text-center mt-3">AGREGAR OT</h4>
@@ -160,7 +162,7 @@ export default function AgregarOT() {
           Agregar
         </Button>
       </Box>
-      <ListOT ordenes={ordenes} onSet={setordenes} onGetAll={obtenerOT}/>
+      <ListOT ordenes={ordenes} onSet={setordenes} onGetAll={obtenerOT} />
     </>
   );
 }
