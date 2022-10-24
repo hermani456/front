@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 .footer {
 	position: fixed;
 	left: 0;
@@ -14,4 +15,5 @@ html,
 .bgcolor {
 	background-color: rgb(43, 42, 51);
 	color: white;
+	font-family: 'Ubuntu', sans-serif;
 }
