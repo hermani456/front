@@ -1,4 +1,3 @@
-import "./login.css";
 import { useContext, useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
