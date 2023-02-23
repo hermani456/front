@@ -162,7 +162,7 @@ export default function AgregarOT() {
           Agregar
         </Button>
       </Box>
-      {/* <ListOT ordenes={ordenes} onSet={setordenes} onGetAll={obtenerOT} /> */}
+      <ListOT ordenes={ordenes} onSet={setordenes} onGetAll={obtenerOT} />
     </>
   );
 }
