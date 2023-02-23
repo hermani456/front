@@ -79,6 +79,90 @@ export default function AgregarOT() {
   }
 
   return (
+    <>
+      <h4 className="text-center mt-3">AGREGAR OT</h4>
+      <Box
+        marginTop={4}
+        component="form"
+        sx={{
+          "& .MuiTextField-root": { m: 1, width: "25ch" },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <div className="field">
+          <TextField
+            label="Numero de OT"
+            type="number"
+            value={ot}
+            onChange={(e) => {
+              setOt(e.target.value);
+              setOtIsValid(e.target.value);
+            }}
+            error={!otIsValid}
+            helperText={!otIsValid && "campo obligatorio"}
+          />
+          <TextField
+            label="Rut"
+            type="number"
+            value={rut}
+            onChange={(e) => setRut(e.target.value)}
+          />
+          <TextField
+            label="Referencia"
+            type="text"
+            value={referencia}
+            onChange={(e) => setreferencia(e.target.value)}
+          />
+          <TextField
+            label="Tipo de Documento"
+            select
+            type="text"
+            value={tipo_documento}
+            onChange={(e) => setTipoDocumento(e.target.value)}
+          >
+            {options.map((option) => (
+              <MenuItem key={option} value={option}>
+                {option}
+              </MenuItem>
+            ))}
+          </TextField>
+          {/* <TextField
+						label='Fecha Ingreso'
+						type='date'
+						InputLabelProps={{
+							shrink: true,
+						}}
+						value={fecha_ingreso}
+						onChange={(e) => setFechaIngreso(e.target.value)}
+					/> */}
+          <TextField
+            label="Fecha Retiro"
+            type="date"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            value={fecha_entrega}
+            onChange={(e) => setFechaEntrega(e.target.value)}
+          />
+          <TextField
+            label="Observaciones"
+            type="text"
+            value={observaciones}
+            onChange={(e) => setObservaciones(e.target.value)}
+          />
+        </div>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          onClick={handleSubmit}
+          className="text-center d-block mx-auto"
+        >
+          Agregar
+        </Button>
+      </Box>
       <ListOT ordenes={ordenes} onSet={setordenes} onGetAll={obtenerOT} />
+    </>
   );
 }
