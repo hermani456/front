@@ -10,7 +10,7 @@ import moment from "moment";
 import ListOT from "./ListOT";
 import Loading from "./Loading";
 
-export default function AgregarOT() {
+export default function Admin() {
   const [ordenes, setordenes] = useState([]);
   const [ot, setOt] = useState("");
   const [otIsValid, setOtIsValid] = useState(true);
