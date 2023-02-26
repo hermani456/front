@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import AgregarOT from "./components/AgregarOT";
 import { Container } from "react-bootstrap";
-import ListarOT from "./components/ListarOT";
+import Aho from "./components/Aho";
 // import Footer from './components/Footer'
 import Login from "./components/login/Login";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -46,7 +46,7 @@ function App() {
                 path="agregar"
                 element={
                   <RequireAuth>
-                    <ListarOT />
+                    <Aho />
                   </RequireAuth>
                 }
               />
