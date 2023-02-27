@@ -51,7 +51,7 @@ const ListarCaratula = ({ ordenes, onSet }) => {
 
   return (
     <>
-      <div role="presentation">
+      {/* <div role="presentation">
         <Breadcrumbs aria-label="breadcrumb">
           <Link
             underline="hover"
@@ -78,7 +78,7 @@ const ListarCaratula = ({ ordenes, onSet }) => {
             Ordenes Entregadas
           </Link>
         </Breadcrumbs>
-      </div>
+      </div> */}
       <TableContainer component={Paper} style={{ marginBottom: "40px" }}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>

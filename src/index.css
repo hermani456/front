@@ -17,3 +17,7 @@ html,
 	color: white;
 	font-family: 'Ubuntu', sans-serif;
 }
+.margin{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

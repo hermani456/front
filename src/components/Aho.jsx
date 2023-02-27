@@ -37,7 +37,7 @@ export default function Aho() {
       setOtIsValid(false);
       return;
     }
-    const estado = "Esperando estado";
+    const estado = "EN PROCESO";
     const fecha_ingreso = moment().format("YYYY-MM-DD");
     const nuevaOrden = {
       caratula,
@@ -88,7 +88,7 @@ export default function Aho() {
             type="number"
             value={caratula}
             onChange={(e) => {
-              setCaratula(+e.target.value);
+              setCaratula(e.target.value);
               setOtIsValid(e.target.value);
             }}
             error={!otIsValid}
@@ -143,7 +143,7 @@ export default function Aho() {
           variant="contained"
           color="primary"
           onClick={handleSubmit}
-          className="text-center d-block mx-auto"
+          className="text-center d-block mx-auto my-3"
         >
           Agregar
         </Button>

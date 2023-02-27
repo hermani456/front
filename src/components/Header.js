@@ -15,7 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb'
 import { Link } from 'react-router-dom'
 
 const pages = [
-	{ name: 'Home', path: '/' },
+	{ name: 'IQQ', path: '/' },
 	{ name: 'AHO', path: '/agregar' },
 ]
 
