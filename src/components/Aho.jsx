@@ -39,9 +39,8 @@ export default function Aho() {
     }
     const estado = "Esperando estado";
     const fecha_ingreso = moment().format("YYYY-MM-DD");
-    const caratulan = +caratula
     const nuevaOrden = {
-      caratulan,
+      caratula,
       referencia,
       tipo_documento,
       fecha_ingreso,
@@ -89,7 +88,7 @@ export default function Aho() {
             type="number"
             value={caratula}
             onChange={(e) => {
-              setCaratula(e.target.value);
+              setCaratula(+e.target.value);
               setOtIsValid(e.target.value);
             }}
             error={!otIsValid}

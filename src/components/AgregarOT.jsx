@@ -12,7 +12,7 @@ import Loading from "./Loading";
 
 export default function AgregarOT() {
   const [ordenes, setordenes] = useState([]);
-  const [ot, setOt] = useState(0);
+  const [ot, setOt] = useState("");
   const [otIsValid, setOtIsValid] = useState(true);
   const [rut, setRut] = useState(17797462);
   const [referencia, setreferencia] = useState("");
@@ -40,9 +40,8 @@ export default function AgregarOT() {
     }
     const estado = "Esperando estado";
     const fecha_ingreso = moment().format("YYYY-MM-DD");
-    const otn = +ot
     const nuevaOrden = {
-      otn,
+      ot,
       rut,
       referencia,
       tipo_documento,
