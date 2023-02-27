@@ -39,8 +39,9 @@ export default function Aho() {
     }
     const estado = "Esperando estado";
     const fecha_ingreso = moment().format("YYYY-MM-DD");
+    const caratulan = +caratula
     const nuevaOrden = {
-      caratula,
+      caratulan,
       referencia,
       tipo_documento,
       fecha_ingreso,
