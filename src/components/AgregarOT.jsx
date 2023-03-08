@@ -68,7 +68,9 @@ export default function AgregarOT() {
     "ADJUDICACION",
     "DESARCHIVO",
     "INSCRIPCION",
+    "DESARCHIVO",
     "ALZAMIENTO",
+    "HIP/PROH",
     "VIGENCIA",
     "OTRO",
   ];
