@@ -60,10 +60,10 @@ export default function Aho() {
 
   const options = [
     "GP",
-    "Reinscripcion",
-    "Adjudicacion",
-    "Alzamiento",
-    "Inscripcion"
+    "REINSCRIPCIÓN",
+    "ADJUDICACIÓN",
+    "ALZAMIENTO",
+    "INSCRIPCIÓN"
   ];
 
   if (loading) {
