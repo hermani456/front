@@ -60,7 +60,7 @@ export default function Aho() {
 
   const options = [
     "GP",
-    "Reinscripcon",
+    "Reinscripcion",
     "Adjudicacion",
     "Alzamiento",
     "Inscripcion"
