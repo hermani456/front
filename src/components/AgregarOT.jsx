@@ -66,10 +66,9 @@ export default function AgregarOT() {
     "D.F.R.",
     "ESCRITURA",
     "ADJUDICACION",
-    "COMPRAVENTA",
-    "HIP/PROH",
+    "DESARCHIVO",
+    "INSCRIPCION",
     "ALZAMIENTO",
-    "HERENCIA",
     "VIGENCIA",
     "OTRO",
   ];
