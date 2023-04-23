@@ -48,6 +48,10 @@ const ListOT = ({ ordenes, onSet }) => {
     const response = await axios.get(`${process.env.REACT_APP_MAGIC_SECRET}`);
     onSet(response.data);
   };
+  const getAdjudicacion = async () => {
+    const response = await axios.get(`${process.env.REACT_APP_MAGIC_SECRET}/adjudicacion`);
+    onSet(response.data);
+  };
 
   return (
     <>
@@ -67,7 +71,7 @@ const ListOT = ({ ordenes, onSet }) => {
             onClick={getAll}
             className="links"
           >
-            Todas las Ordenes
+            Ordenes en Proceso
           </Link>
           <Link
             underline="hover"
@@ -76,6 +80,14 @@ const ListOT = ({ ordenes, onSet }) => {
             className="links"
           >
             Ordenes Entregadas
+          </Link>
+          <Link
+            underline="hover"
+            style={{ textDecoration: "none" }}
+            onClick={getAdjudicacion}
+            className="links"
+          >
+            Ajudicaciones
           </Link>
         </Breadcrumbs>
       </div>
