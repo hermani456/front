@@ -64,11 +64,10 @@ export default function AgregarOT() {
   const options = [
     "GP",
     "D.F.R.",
-    "ESCRITURA",
+    "COPIA",
     "ADJUDICACION",
     "DESARCHIVO",
     "INSCRIPCION",
-    "DESARCHIVO",
     "ALZAMIENTO",
     "HIP/PROH",
     "VIGENCIA",
